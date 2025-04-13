@@ -1,0 +1,9 @@
+# 결과물 폴더 무시
+generated_profiles/
+generated_qrcodes/
+input_data.csv
+
+# 기타 무시하고 싶은 파일
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ 국문이름 }}의 프로필</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 10px; text-align: center; background-color: #f4f4f4; }
+        .profile-container { position: relative; display: flex; flex-direction: column; align-items: center; padding: 25px; background: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); margin-bottom: 100px }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 4px solid #FED002; }
+        .name-container { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 15px; }
+        .name { font-size: 26px; font-weight: bold; }
+        .eng-name { font-size: 18px; color: gray; }
+        .job-title { font-size: 20px; font-weight: bold; margin-top: 5px; color: #FED002; }
+        .hashtags { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .hashtag { background: #FED002; padding: 8px 12px; border-radius: 15px; font-size: 14px; color: #000000; }
+        .experience, .contact { text-align: left; width: 100%; padding: 15px; background: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); margin-top: 20px;}
+        .experience-title, .contact-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; border-bottom: 2px solid #FED002; padding-bottom: 5px; }
+        .contact-item { margin-top: 10px; font-size: 15px; line-height: 1.3; }
+        .experience-item { margin-top: 10px; font-size: 15px; line-height: 1.6; }
+        .footer { background: white; color: black; padding: 20px; display: flex; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box; position: fixed; bottom: 0; left: 0; }
+        .footer img { width: 100px; height: auto; }
+        .footer div { font-size: 14px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div style="position: relative; display: inline-block;">
+          <a href="{{ 링크드인 }}" target="_blank">
+              <img src="{{ 프로필사진 }}" alt="Profile Picture" class="profile-img">
+              <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"
+                  style="position: absolute; bottom: 5px; right: 5px; width: 40px; height: 40px; background: white; border-radius: 15%;">
+          </a>
+        </div>
+
+        <div class="name-container">
+            <div class="name"> {{ 국문이름 }} </div>
+            <div class="eng-name"> {{ 영문이름 }} </div>
+        </div>
+        <div class="job-title">
+            {{ 직무 }}
+        </div>
+        <div class="hashtags">
+            <span class="hashtag">#{{ 관심키워드1 }}</span>
+            <span class="hashtag">#{{ 관심키워드2 }}</span>
+            <span class="hashtag">#{{ 관심키워드3 }}</span>
+        </div>
+        <div class="contact">
+            <div class="contact-title">Contact Information</div>
+            <div class="contact-item"><strong>Email:</strong> {{ 이메일 }}</div>
+            <div class="contact-item"><strong>University:</strong> {{ 학교 }}</div>
+            <div class="contact-item"><strong>Major:</strong> {{ 학과 }}</div>
+        </div>
+        <div class="experience">
+            <div class="experience-title">Professional Experience</div>
+            <div class="experience-item">✔ {{ 경력1 }}</div>
+            <div class="experience-item">✔ {{ 경력2 }}</div>
+            <div class="experience-item">✔ {{ 경력3 }}</div>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="https://idea-labs.vercel.app/assets/images/logo.png" alt="Company Logo">
+        <div>Copyright ⓒ 2025, Lambda at SUNY Korea, All rights reserved.</div>
+    </div>
+</body>
+</html>
