@@ -2,13 +2,15 @@ import os
 import pandas as pd
 import qrcode
 from jinja2 import Environment, FileSystemLoader
+from dotenv import load_dotenv
+load_dotenv()
 
 # 경로 설정
 CSV_FILE = 'input_data.csv'
 TEMPLATE_FILE = 'profile_demo.html'
 
 # BASE_URL = 웹에서 HTML이 서빙되는 위치
-BASE_URL = "https://lambdathon-profiles.web.app/"
+BASE_URL = os.getenv("BASE_URL")
 
 # 생성될 파일 폴더
 OUTPUT_FOLDER = 'generated_profiles'

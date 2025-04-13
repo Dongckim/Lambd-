@@ -2,6 +2,7 @@
 generated_profiles/
 generated_qrcodes/
 input_data.csv
+.env
 
 # 기타 무시하고 싶은 파일
 __pycache__/
