@@ -5,7 +5,6 @@ Lambd@ is a QR-based business card platform aimed at enhancing networking during
 
 <img width="300" height="auto" alt="Image" src="https://github.com/user-attachments/assets/374beb56-19c6-41a9-a648-5ccb08ef7585" />
 <img width="300" height="auto" alt="Image" src="https://github.com/user-attachments/assets/02b477fb-b8ad-47e1-98f2-9ae0cedace52" />
-<img width="300" height="auto" alt="Image" src="https://github.com/user-attachments/assets/6f116dcd-f27f-4c1d-8588-aa3d35fa66d8" />
 
 
 ## Table of Contents
