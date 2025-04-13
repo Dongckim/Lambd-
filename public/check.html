@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR 이벤트 결과</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f2f2;
+      color: #333;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    header {
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: #ddd;
+      font-weight: normal;
+      margin-top: 5px;
+      letter-spacing: 1px;
+    }
+
+    img {
+      width: 80%;
+      max-width: 280px;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+
+    .message {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      line-height: 1.5;
+      padding: 0 20px;
+    }
+
+    .result-container {
+      padding: 20px;
+      text-align: center;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      width: 350px;
+      margin-top: 30px;
+    }
+  </style>
+  <script src="keys.js"></script>
+</head>
+<body>
+  <header>
+    Lambdathon:
+    <div class="subtitle">Future Hacking, Step into New Era</div>
+    <div class="subtitle">2025.4.25 - 2025.4.26</div>
+  </header>
+
+  <div class="result-container" id="result">
+    <p>결과를 불러오는 중입니다...</p>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const key = urlParams.get("key");
+    const resultDiv = document.getElementById("result");
+
+    if (keys[key] === "win") {
+      resultDiv.innerHTML = `
+        <img src="win.png" alt="당첨!">
+        <div class="message">🎉 축하합니다! 미션성공!</div>
+      `;
+    } else if (keys[key] === "lose") {
+      resultDiv.innerHTML = `
+        <img src="lose.png" alt="꽝">
+        <div class="message">❌ 꽝입니다! 다시 시도해주세요</div>
+      `;
+    } else {
+      resultDiv.innerHTML = `
+        <div class="message">⚠️ 잘못된 QR 코드입니다.</div>
+      `;
+    }
+  </script>
+</body>
+</html>

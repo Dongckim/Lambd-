@@ -5,18 +5,14 @@ from jinja2 import Environment, FileSystemLoader
 from dotenv import load_dotenv
 load_dotenv()
 
-# 경로 설정
 CSV_FILE = 'input_data.csv'
 TEMPLATE_FILE = 'profile_demo.html'
 
-# BASE_URL = 웹에서 HTML이 서빙되는 위치
 BASE_URL = os.getenv("BASE_URL")
 
-# 생성될 파일 폴더
 OUTPUT_FOLDER = 'generated_profiles'
 QR_FOLDER = 'generated_qrcodes'
 
-# HTML 템플릿 렌더링
 def generate_html(data_dict):
     env = Environment(loader=FileSystemLoader(searchpath="./"))
     template = env.get_template(TEMPLATE_FILE)
@@ -29,10 +25,9 @@ def save_html(file_name, content):
     file_path = os.path.join(OUTPUT_FOLDER, file_name)
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(content)
-    print(f"✅ Saved HTML: {file_path}")
+    print(f"=== Saved HTML: {file_path}")
     return file_path
 
-# QR코드 생성
 def generate_qr(filename):
     if not os.path.exists(QR_FOLDER):
         os.makedirs(QR_FOLDER)
@@ -40,9 +35,8 @@ def generate_qr(filename):
     qr = qrcode.make(profile_url)
     qr_path = os.path.join(QR_FOLDER, f"{os.path.splitext(filename)[0]}_qrcode.png")
     qr.save(qr_path)
-    print(f"📌 QR Generated: {qr_path} → {profile_url}")
+    print(f"QR Generated: {qr_path} → {profile_url}")
 
-# 실행 main
 def main():
     df = pd.read_csv(CSV_FILE)
 
@@ -69,7 +63,7 @@ def main():
         save_html(file_name, html_content)
         generate_qr(file_name)
 
-    print("\n🎉 All profiles and QR codes have been successfully generated!")
+    print("\n ==== All profiles and QR codes have been successfully generated! ====")
 
 if __name__ == "__main__":
     main()
